@@ -13,7 +13,6 @@ class StudentDetail extends React.Component {
 
   _getStudentDetail = data => {
     const studentId = parseInt(this.props.match.params.id);
-    console.log("the data is", data);
     const studentDetail = Object.values(data).filter(
       student => student.rollNo === studentId
     )[0];
@@ -27,7 +26,6 @@ class StudentDetail extends React.Component {
   }
 
   _renderTable = table => {
-    console.log(" the table is ", table);
     if (!table) {
       return <div> Table Loading</div>;
     } else {
@@ -57,9 +55,7 @@ class StudentDetail extends React.Component {
   };
 
   render() {
-    console.log("the props are ", this.props);
     const { studentDetail } = this.state;
-    console.log("the studentDetail is", studentDetail);
     return (
       <div className="student-details-wrapper">
         <Link to='/dashboard' className="dashboard-link">Dashboard</Link>

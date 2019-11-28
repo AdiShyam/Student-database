@@ -30,7 +30,6 @@ class SignIn extends React.Component {
 
     _handleSignInWithGoogle = e => {
         signInWithGoogle().then((status) => {
-            console.log("the status usss", status)
             history.push("/dashboard");
         });
     }

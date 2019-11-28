@@ -21,7 +21,6 @@ class App extends React.Component {
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async user => {
       await this.setState({currentUser: user})
-      console.log("the user is ", user);
     });
   }
 
@@ -37,30 +36,8 @@ class App extends React.Component {
           <Header signIn={signInStatus} />
           <Switch>
             <Route excat path="/dashboard" component={Dashboard} />
-            {/* <Route exact path="/signIn" component = {SignInSignUp} /> */}
             <Route exact path="/:id" component = {StudentDetail} />
-            {/* {
-              (SignInSignUp)
-              ?
-              <Route excat path="/dashboard" component={Dashboard} />
-              :
-              <Route excat path="/" component={SignInSignUp} />
-            } */}
             <Route excat path="/" component={SignInSignUp} />
-            {/* <Route
-              excat
-              path="/"
-              render={() =>
-                signInStatus ? (
-                  // history.push("/dashboard")
-                  <Dashboard />
-                  // <Redirect to="/dashboard" />
-                  ) : (
-                    <SignInSignUp />
-                  )
-              }
-            /> */}
-            
           </Switch>
         </Router>
       </div>
@@ -69,15 +46,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// <Route
-//             excat
-//             path="/signIn" 
-//             render={() =>
-//               signInStatus ? (
-//                 <Redirect to="/" />
-//               ) : (
-//                   <SignInSignUp />
-//                 )
-//             }
-//           />

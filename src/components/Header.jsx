@@ -21,7 +21,6 @@ class Header extends React.Component {
 
 
     render() {
-        console.log("the signIn status is "+ this.props.signIn)
         const currentUser = this.props.signIn;
         return(
             <div className = 'header'>

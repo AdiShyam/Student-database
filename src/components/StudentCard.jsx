@@ -13,10 +13,6 @@ class StudentCard extends React.Component {
         history.push(`/${this.props.details.rollNo}`);
     }
 
-    // shouldComponentUpdate (nextProp) {
-    //     return this.props.details.class !== nextProp.details.class
-    // }
-
     componentDidMount() {
         this.setState({
             cardDetails:this.props.details
@@ -28,7 +24,6 @@ class StudentCard extends React.Component {
     }
 
     render() {
-        // console.log("the props are ", this.props.details);
         const studentDetails = this.props.details;
         if (StudentDetail) {
             const totalMarks = this._calculateTotal(studentDetails.marks);

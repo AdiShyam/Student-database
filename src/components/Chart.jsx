@@ -1,5 +1,4 @@
 import React from 'react';
-// import _ from 'loadash';
 import {Sparklines, SparklinesLine, SparklinesReferenceLine} from 'react-sparklines'
 
 

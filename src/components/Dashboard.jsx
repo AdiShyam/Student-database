@@ -45,6 +45,7 @@ class Dashboard  extends React.Component{
             }
             if (nextState.searchStringValue === "") {
                 this.studentDataList = Object.values(this.studentData);
+                this.noDataFound = (this.studentDataList.lenght === 0)? 1: 2;
                 this.setState({
                     data: this.studentDataList
                 });
@@ -67,7 +68,6 @@ class Dashboard  extends React.Component{
 
     _handleSearchTerm = value => {
         this.setState({searchStringValue: value})
-        console.log("the value is ", value);
     }
 
     _handleDecendingorderClick = event => {
@@ -90,7 +90,6 @@ class Dashboard  extends React.Component{
 
     getStudentDataOnSearchString = (stringValue, studentDataList) => {
         this.studentDataList =  studentDataList.filter((element) => {
-            console.log(element.name.toLocaleLowerCase().startsWith(stringValue.toLocaleLowerCase()));
             return element.name.toLocaleLowerCase().startsWith(stringValue.toLocaleLowerCase())
         })
         if(this.studentDataList.length === 0) {
